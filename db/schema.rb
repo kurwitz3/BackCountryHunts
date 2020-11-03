@@ -10,18 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_03_193753) do
+ActiveRecord::Schema.define(version: 2020_11_03_204408) do
 
   create_table "guides", force: :cascade do |t|
     t.string "name"
-    t.integer "hunt_id"
-    t.integer "user_id"
+    t.string "expertise"
   end
 
   create_table "hunts", force: :cascade do |t|
     t.string "animal"
     t.string "location"
     t.integer "cost"
+    t.integer "guide_id"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.string "title"
+    t.text "content"
+    t.integer "user_id"
+    t.integer "hunt_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", force: :cascade do |t|
