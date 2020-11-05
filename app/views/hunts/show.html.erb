@@ -1,0 +1,39 @@
+
+
+<div align="center" class="wrapper">
+<% if @hunt.id == 1 && @hunt.guide_id == 1%>
+  <img src="/elk2.jpg" >
+    <% end %>
+    <% if @hunt.id == 2 && @hunt.guide_id == 1%>
+     <img src="/deer.webp" >
+     <% end %>
+     <% if @hunt.id == 3 && @hunt.guide_id == 1%>
+     <img src="/mlion.jpg" >
+     <% end %>
+   <table>
+    
+       
+    <tr>
+     <td><h2>Animal:  <%= @hunt.animal %></h2></td>
+     </tr>
+
+     <tr>
+     <td><h2>Location:  <%= @hunt.location %></h2></td>
+     </tr>
+
+     <tr>
+     <td><h2>Price:  $<%=  @hunt.cost %></h2></td>
+     </tr>
+     <tr>
+    <td><%= link_to "Create New Review",new_hunt_review_path(@hunt)%></td><br>
+     </tr>
+
+     <p>Reviews:</p>
+     <% @hunt.reviews.each do |review| %>
+      <div> review.title %></div><br>
+      <div> review.content</div><br>
+      <% end %>
+ 
+
+
+</div>

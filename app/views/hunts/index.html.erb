@@ -1,0 +1,17 @@
+<div align="center" class="wrapper">
+
+<img src="/gun.jpg">
+
+<h1>Hunts</h1>
+
+   <table>
+     <% @hunt.each do |hunt| %>
+      
+    <tr>
+     <td><h2><%= hunt.animal  %></h2><%= link_to "View Details", guide_hunt_path(@guide.id,hunt)%></td><br>
+    
+    </tr>
+
+    
+ <% end %>
+</div>

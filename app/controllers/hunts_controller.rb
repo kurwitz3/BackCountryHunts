@@ -11,6 +11,7 @@ class HuntsController < ApplicationController
 
     def show 
         @hunt = Hunt.find(params[:id])
+    end
     private 
 
     def set_guide 

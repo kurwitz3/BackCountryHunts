@@ -1,0 +1,19 @@
+
+<div align="center">
+<%= form_for @review do |f| %>
+    <%= f.hidden_field :hunt_id %>
+
+    
+    <p>
+    <h2><%= f.label :title %></h2>
+    <%= f.text_field :title %>
+    </p>
+    
+    <p>
+    <h2><%= f.label :content %><h2>
+    <%= f.text_area :content, :cols => 60, :rows => 10  %>
+    </p>
+
+    <%= f.submit %>
+    <% end %>
+    </div>
