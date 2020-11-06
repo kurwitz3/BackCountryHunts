@@ -9,14 +9,20 @@ class ReviewsController < ApplicationController
     end  
     
      def new 
-        @review = Review.new(hunt_id: params[:hunt_id])
+        @review = Review.new
      end 
 
      def create 
         @review = Review.new(reviews_params)
-           @review.save 
-            render "index"
         
+           if current_user.id == @review.user_id
+             @review.save
+            
+            redirect_to  reviews_path
+         else 
+            flash[:alert] = "You can only make a review under your name"
+            render '/hunts/new'
+         end
      end 
 
     def show 
@@ -27,7 +33,7 @@ class ReviewsController < ApplicationController
     
 
     def reviews_params 
-     params.require(:review).permit(:title,:content,:user_id,:hunt_id)
+     params.require(:review).permit(:title,:content,:hunt_id,:user_id)
     end 
 end
 

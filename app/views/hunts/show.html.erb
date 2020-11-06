@@ -20,19 +20,25 @@
      <tr>
      <td><h2>Location:  <%= @hunt.location %></h2></td>
      </tr>
-
      <tr>
      <td><h2>Price:  $<%=  @hunt.cost %></h2></td>
      </tr>
+
+    
      <tr>
     <td><%= link_to "Create New Review",new_hunt_review_path(@hunt)%></td><br>
      </tr>
-
-     <p>Reviews:</p>
+      </table>
+     <h3> Hunt Reviews </h3>
      <% @hunt.reviews.each do |review| %>
-      <div> review.title %></div><br>
-      <div> review.content</div><br>
+        
+        
+      <div><h2><%= review.title %></h2></div><br>
+      <div><h2><%= review.content %></h2>"</div><br>
+      <div><h2><%=   %></h2>"</div>
       <% end %>
+
+    
  
 
 

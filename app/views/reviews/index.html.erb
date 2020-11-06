@@ -1,15 +1,21 @@
-<div align="center">
-
+<div align="center" class="wrapper" style="width: 700px; margin: 0 auto; padding-top: 80px; padding-bottom: 40px;">
+ <h1>Reviews</h2>
    <table>
-     
-    <tr>
-     <td><h2><%= @review.title%></h2><br>
+     <%= @review.each do |review| %>
     
-    </tr>
 
-    <tr>
-    <td><%= @review.content %></td><br>
-   
-   </tr>
+      
+      <div class="testimonial-quote group" align="center">
+          <div class="quote-container">
+              <blockquote>
+                  <p><%= review.content %></p>
+              </blockquote>  
+              <cite><span><%= current_user.name %></span><br>
+                  
+              </cite>
+          </div>
+      </div> 
+    
  
+   <% end %>
 </div>
