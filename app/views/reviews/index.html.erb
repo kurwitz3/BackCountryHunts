@@ -1,7 +1,7 @@
 <div align="center" class="wrapper" style="width: 700px; margin: 0 auto; padding-top: 80px; padding-bottom: 40px;">
- <h1>Reviews</h2>
+ <h1> My Reviews</h2>
    <table>
-     <%= @review.each do |review| %>
+     <%= @user.reviews.each do |review| %>
     
 
       
@@ -10,8 +10,8 @@
               <blockquote>
                   <p><%= review.content %></p>
               </blockquote>  
-              <cite><span><%= current_user.name %></span><br>
-                  
+              <h2><%= link_to "Edit Review", edit_review_path(review) %></h2>
+              <h2><%= link_to "Delete Review", review_path(review), :method => :delete %></h2>  
               </cite>
           </div>
       </div> 

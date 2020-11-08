@@ -5,13 +5,14 @@ class HuntsController < ApplicationController
             set_guide
             @hunt = @guide.hunts
         else 
-            @hunt = Hunt.all
+            @hunt = Hunt.budget_hunts
       end
     end     
 
     def show 
         @hunt = Hunt.find(params[:id])
     end
+    
     private 
 
     def set_guide 

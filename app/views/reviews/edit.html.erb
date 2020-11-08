@@ -9,15 +9,14 @@
 </ul>
 <% end %>
 
-
-  <%= form_for @review do |f| %>
+<%= form_for @review do |f| %>
     <%= f.hidden_field :hunt_id %>
-    <%= f.hidden_field :user_id %>
+
     <p>
      <h2>  Choose which hunt you would like to write a review for.</h2>
       <%= f.collection_select :hunt_id,Hunt.all,:id, :animal %><br>
     </p>
-    
+   
     
     <p>
      <h2><%= f.label :title %></h2>
@@ -28,7 +27,7 @@
      <h2><%= f.label :content %><h2>
       <%= f.text_area :content, :cols => 60, :rows => 10  %>
     </p>
-    <%= f.submit%>
-   
+
+     <%= f.submit %>
     <% end %>
 </div>

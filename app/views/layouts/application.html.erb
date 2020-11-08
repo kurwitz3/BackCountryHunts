@@ -2,42 +2,41 @@
 <html>
   
     <title>MkTours</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-    <link href='https://fonts.googleapis.com/css?family=Alegreya SC' rel='stylesheet'>
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+     <%= csrf_meta_tags %>
+      <%= csp_meta_tag %>
+       <link href='https://fonts.googleapis.com/css?family=Alegreya SC' rel='stylesheet'>
+        <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+         <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <style>
-    background-image: url("/walk.webp");
+      background-image: url("/walk.webp");
       background-size: cover;
-      </style>
-  </head>
+    </style>
   <head>
-  <div class="sidenav">
-   <h2> <%= link_to "Home", root_path %></h2>
-   <h2> <%= link_to "Sign Up", new_user_registration_path %></h2>
-   <h2> <%= link_to "Log In", new_user_session_path %></h2>
-   <h2> <%= link_to "Guides", guides_path %></h2>
-   <h2> <%= link_to "Log Out", destroy_user_session_path, :method => :delete %></h2>
-   <h2> <%= link_to "Reviews", reviews_path %></h2>
-   <h2> <%= link_to " My Reviews", users_path %></h2>
-  </div>
+    <div class="sidenav">
+     <h2> <%= link_to "Home", root_path %></h2>
+     <h2> <%= link_to "Sign Up", new_user_registration_path %></h2>
+     <h2> <%= link_to "Log In", new_user_session_path %></h2>
+     <h2> <%= link_to "Log Out", destroy_user_session_path, :method => :delete %></h2>
+     <h2> <%= link_to "Guides", guides_path %></h2>
+     <h2> <%= link_to "Budget Hunts", hunts_path %></h2>
+     <h2> <%= link_to "My Reviews", reviews_path %></h2>
+     
+    </div>
   
   <body>
   <%= render 'layouts/messages' %>
     
   </div>
-  <p class="notice"><%= notice %></p>
+    
+       <p class="notice"><%= notice %></p>
        <p class="alert"><%= alert %></p>
-       <div align= "center" class="col-xs-8">
+      <div align= "center" class="col-xs-8">
        <h1>Back Country Hunts</h1>
-       <div class="container">
+        <div class="container">
          <div class="row">
            <div class="col-xs-8">
-           
-           
          </div>
-           </div>
+      </div>
      
 
            <div class="col-xs-4">

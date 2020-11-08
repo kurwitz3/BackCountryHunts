@@ -1,42 +1,50 @@
 
 
 <div align="center" class="wrapper">
-<% if @hunt.id == 1 && @hunt.guide_id == 1%>
-  <img src="/elk2.jpg" >
+    <% if @hunt.id == 1 && @hunt.guide_id == 1%>
+     <img src="/elk2.jpg" >
     <% end %>
     <% if @hunt.id == 2 && @hunt.guide_id == 1%>
      <img src="/deer.webp" >
-     <% end %>
-     <% if @hunt.id == 3 && @hunt.guide_id == 1%>
+    <% end %>
+    <% if @hunt.id == 3 && @hunt.guide_id == 1%>
      <img src="/mlion.jpg" >
-     <% end %>
+    <% end %>
+    <% if @hunt.id == 4 && @hunt.guide_id == 2%>
+     <img src="/lep2.webp" >
+    <% end %>
+    <% if @hunt.id == 5 && @hunt.guide_id == 2%>
+     <img src="/lion2.webp" >
+    <% end %>
+    <% if @hunt.id == 6  && @hunt.guide_id == 2%>
+     <img src="/buff.jpg" >
+    <% end %>
    <table>
     
        
     <tr>
-     <td><h2>Animal:  <%= @hunt.animal %></h2></td>
-     </tr>
+      <td><h2>Animal:  <%= @hunt.animal %></h2></td>
+    </tr>
 
-     <tr>
-     <td><h2>Location:  <%= @hunt.location %></h2></td>
-     </tr>
-     <tr>
-     <td><h2>Price:  $<%=  @hunt.cost %></h2></td>
-     </tr>
-
+    <tr>
+      <td><h2>Location:  <%= @hunt.location %></h2></td>
+    </tr>
+     
+    <tr>
+      <td><h2>Price:  $<%=  @hunt.cost %></h2></td>
+    </tr>
     
-     <tr>
-    <td><%= link_to "Create New Review",new_hunt_review_path(@hunt)%></td><br>
-     </tr>
-      </table>
-     <h3> Hunt Reviews </h3>
+    <tr>
+     <td><%= link_to "Create New Review",new_hunt_review_path(@hunt)%></td><br>
+    </tr>
+  </table>
+     
+   <h3> Hunt Reviews </h3>
      <% @hunt.reviews.each do |review| %>
-        
-        
-      <div><h2><%= review.title %></h2></div><br>
-      <div><h2><%= review.content %></h2>"</div><br>
-      <div><h2><%=   %></h2>"</div>
-      <% end %>
+        <div><h2><%= review.title %></h2></div><br>
+        <div><h2><%= review.content %></h2>"</div><br>
+      
+     <% end %>
 
     
  
