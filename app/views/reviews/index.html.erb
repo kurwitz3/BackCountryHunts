@@ -1,21 +1,16 @@
 <div align="center" class="wrapper" style="width: 700px; margin: 0 auto; padding-top: 80px; padding-bottom: 40px;">
- <h1> My Reviews</h2>
-   <table>
-     <%= @user.reviews.each do |review| %>
-    
+  <h1> My Reviews</h2>
+<table>
+ <%= @user.reviews.each do |review| %>
 
-      
-      <div class="testimonial-quote group" align="center">
-          <div class="quote-container">
-              <blockquote>
-                  <p><%= review.content %></p>
-              </blockquote>  
-              <h2><%= link_to "Edit Review", edit_review_path(review) %></h2>
-              <h2><%= link_to "Delete Review", review_path(review), :method => :delete %></h2>  
-              </cite>
-          </div>
-      </div> 
-    
- 
-   <% end %>
+<div class="testimonial-quote group" align="center">
+ <div class="quote-container">
+  <blockquote>
+    <p><%= review.content %></p>
+  </blockquote>  
+    <h2><%= link_to "Edit Review", edit_review_path(review) %></h2>
+    <h2><%= link_to "Delete Review", review_path(review), :method => :delete %></h2>  
+   </div>
+  </div>  
+ <% end %>
 </div>

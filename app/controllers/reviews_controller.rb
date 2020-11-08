@@ -36,7 +36,7 @@ class ReviewsController < ApplicationController
       else 
         redirect_to root_path 
     end 
-
+  end
     def update 
      @review = current_user.reviews.find(params[:id])
     if @review.update_attributes(title: params[:review][:title],content: params[:review][:content])
@@ -54,7 +54,7 @@ class ReviewsController < ApplicationController
       else 
         redirect_to root_path 
     end 
-
+  end
     
     private 
 
@@ -65,7 +65,7 @@ class ReviewsController < ApplicationController
 
     def set_user 
      params[:review][:user_id] = current_user.id
-end
+    end
 
 
 end

@@ -2,40 +2,38 @@
 
 <img src="/gun.jpg">
 
-
 <% if params[:guide_id] %>
-<h1>Hunts</h1>
-   <table>
-     <% @hunt.each do |hunt| %>
-      
-    <tr>
-     <td><h2><%= hunt.animal  %></h2><%= link_to "View Details", guide_hunt_path(@guide.id,hunt)%></td><br>
+   <h1>Hunts</h1>
+  <table>
+    <% @hunt.each do |hunt| %>
+     <tr>
+      <td><h2><%= hunt.animal  %></h2><%= link_to "View Details", guide_hunt_path(@guide.id,hunt)%></td><br>
      </tr>
      <% end %>
+     
      <% else %>
-     <div class=>
-     <table>
+     
+  <div class=>
+   <table>
      <h1> Budget Hunts</h1>
-     <p class="text"> If your're hunting on a budget take a look at some of our hunts for under $3000! 
-     Vist the guide section for more information on the hunt. </p>
-     <% @hunt.each do |hunt| %>
+       <p class="text"> If your're hunting on a budget take a look at some of our hunts for under $3000! 
+          Vist the guide section for more information on the hunt. </p>
+      
+       <% @hunt.each do |hunt| %>
     <tr>
      <td><div class="image-container">
-     <div class="glow"><h2><%= hunt.animal  %><h2></div></td><br>
+      <div class="glow"><h2><%= hunt.animal %><h2></div></td><br>
      </div>
-     </tr>
-   
-       <br>
-     <tr>
+    </tr>
+      <br>
+    <tr>
      <td><h2><%= hunt.location  %></h2></td><br>
-     </tr>
+    </tr>
 
-     <tr>
-     <td><h2>Cost $<%= hunt.cost  %></h2></td><br>
-     </tr>
-     
-
-    <% end %>
+    <tr>
+      <td><h2>Cost $<%= hunt.cost  %></h2></td><br>
+    </tr>
+   <% end %>
  <% end %>
 
  </div>
